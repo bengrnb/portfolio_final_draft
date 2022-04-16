@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="images/favicon.ico">
+	<link rel="stylesheet" href="css/html5reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Watch Movements</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2YSYP98R7K"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-2YSYP98R7K');
+	</script>
+	<script src="https://kit.fontawesome.com/dc205851a5.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<a class = "skip" href="#main">Skip to Main Content</a>
+	<header>
+		<nav>
+			<ul>
+				<li><a href = "index.html" >Watch Components</a></li>
+				<li><a href = "watch_brands.html">Watch Brands</a></li>
+				<li><a href = "watch_features.html">Watch Features</a></li>
+				<li class="active"><a href = "watch_movement.html">*-Watch Movements-*</a></li>
+			</ul>
+		</nav>
+		<h1 id="main">Watch Features</h1>
+	</header>
+
+	<main>
+		<p>
+			There are two main watch movements; automatic watches and quartz watches.
+		</p>
+
+		<div class="watch_movement_images">
+			<img src = "images/rolex_quartz_movement.jpg" alt="Quartz watch movement" width = 200>
+			<img src = "images/seiko_automatic_movement.jpg" alt="Automatic watch movement" width = 200>
+			<img src = "images/person5_movement.jpg" alt="Person wearing a watch in a field of flowers" width = 200>
+			<img src = "images/person7_movement.jpg" alt="Elderly person wearing a watch" width = 200>
+		</div>
+
+		<p>
+			Quartz watches are powered by a battery and are usually extremely accurate. Automatic watches to not have a battery and are powered by a wound spring. Depending on the watch, the spring can get self wound if it is on someone's hand, or it can get manually wound by turning the crown of the watch.
+		</p>
+
+		<p>
+			Automatic: An automatic, or self-winding, movement is a mechanical movement first marketed in the beginning decades of the 20th century. It winds itself while worn on the wrist, eliminating the need for daily hand winding. However, if not worn for some time, the watch will stop and require a manual winding. This does not include taking the watch off before bed. Source: <a href="https://www.tourneau.com/watch-education/watch-movements.html#:~:text=The%20hands%20advance.-,AUTOMATIC%20MOVEMENT,and%20require%20a%20manual%20winding">https://www.tourneau.com/watch-education/watch-movements.html#:~:text=The%20hands%20advance.-,AUTOMATIC%20MOVEMENT,and%20require%20a%20manual%20winding.</a>
+		</p>
+
+		<form
+			action="https://formspree.io/f/xayvboda"
+			method="POST">
+			<fieldset>
+				<Legend>Contact Ben</Legend>
+
+				<label for="first_name">First Name</label>
+				<input type="text" placeholder="First Name" id="first_name" name="first_name" required>
+
+				<label for="last_name">Last Name</label>
+				<input type="text" placeholder="Last Name" id="last_name" name="last_name" required>
+
+				<label for="email">Email</label>
+    			<input type="email" placeholder="Email" id="email" name="email" required>
+
+				<label for="phone">Phone</label>
+				<input type="tel" placeholder="Phone" id="phone" name="phone" required>
+
+				<label for="optional_message">Leave A Message</label>
+    			<textarea placeholder="Enter your message" id = "optional_message" name="optional_message" required></textarea>
+
+				<input type="submit" value = "Submit Your Message">
+			</fieldset>
+		</form>
+
+		<h2>
+			Image credits:
+		</h2>
+
+		<ul>
+			<li><a href="https://www.hodinkee.com/articles/best-mechanical-watches-under-1000-seiko-hamilton-tissot">Automatic: https://www.hodinkee.com/articles/best-mechanical-watches-under-1000-seiko-hamilton-tissot</a></li>
+			<li><a href="https://www.hodinkee.com/articles/four-revolutions-quartz-revolution">Quartz: https://www.hodinkee.com/articles/four-revolutions-quartz-revolution</a></li>
+			<li><a href="https://unsplash.com/photos/LIRZhTS-xzw">Person5: https://unsplash.com/photos/LIRZhTS-xzw</a></li>
+			<li><a href="https://unsplash.com/photos/IL6M6cmhEpM">Person7: https://unsplash.com/photos/IL6M6cmhEpM</a></li>
+			<li><a href="https://unsplash.com/photos/_kUxT8WkoeY">Background Image: https://unsplash.com/photos/_kUxT8WkoeY</a></li>
+		</ul>
+
+		<footer>
+			<i class="fa-solid fa-stopwatch fa-beat" style="--fa-beat-scale: 2.0;"></i>
+			Ben Greenberg 2021
+			<i class="fa-solid fa-clock fa-beat" style="--fa-beat-scale: 2.0;"></i>
+		</footer>
+	</main>
+</body>

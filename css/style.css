@@ -1,0 +1,238 @@
+body {
+    background-image: url("../images/background.jpg");
+}
+* {
+    font-family: 'Roboto', sans-serif;
+}
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin: 30px 0;
+    text-align: center;
+}
+h2 {
+    font-weight: bold;
+    margin: 30px 0;
+    margin-left: 15px;
+}
+
+li a {
+    color: black;
+}
+li.active a {
+    color: black;
+}
+img {
+    margin: 12px;
+    padding: 3px;
+    border: 5px solid #4285F4;
+    width: 200px;
+}
+img:hover {
+    border: 5px solid #ea4335;
+}
+P {
+    margin: 10px;
+}
+footer {
+    margin: 10px;
+}
+.active {
+    background-color: white;
+    font-weight: bold;
+    border: 4px solid #4285F4;
+    color: #4285F4;
+}
+/* Styling for the form */
+form {
+    border: 4px dotted blue;
+    background-color: white;
+}
+fieldset{
+    margin: 5px;
+}
+
+legend {
+    font-size: 125%;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+label {
+    display: inline-block;
+    width: 10%;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    display: inline-block;
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+
+span{
+    margin-left:20%;
+    font-family: italic;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    height: 35vh;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    display: inline-block;
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: blue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type=submit]:hover {
+    opacity: .8;
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (min-width: 770px) {
+    form{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    input{
+        width:80%;
+    }
+
+    textarea{
+        width:80%;
+        height: 25vh;
+    }
+
+    div + label{
+        line-height: 25vh;
+        vertical-align:top;
+    }
+}
+/* End of form styling */
+
+/* Animation */
+@keyframes rotation {
+    100% {transform: rotate(360deg);}
+}
+img#rotating {
+    animation: rotation 4s;
+}
+@media screen and (prefers-reduced-motion: reduce){
+    img#rotating {
+        animation: none;
+    }
+}
+/* End of animation */
+
+/* Grid: Nav element */
+nav li {
+    margin: 0px;
+    border:1px solid black;
+	padding:10px;
+    background-color: #4285F4;
+    text-align: center;
+}
+ul #grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+#watch_components {
+    grid-area: 1 / 1 / span 1 / span 1;
+}
+#watch_brands {
+    grid-area: 2 / 1 / span 1 / span 1;
+}
+#watch_features {
+    grid-area: 3 / 1 / span 1 / span 1;
+}
+#watch_movements {
+    grid-area: 4 / 1 / span 1 / span 1;
+}
+/* End of Nav/Grid element */
+
+/* Beginning of flex */
+.watch_components_images {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: red 2px solid;
+    margin: 15px;
+    justify-content: center;
+}
+.watch_brands_images {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: blue 2px solid;
+    margin: 15px;
+    justify-content: center;
+}
+.watch_features_images {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    border: red 2px solid;
+    margin: 15px;
+    justify-content: center;
+}
+.watch_movement_images {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: red 2px dotted;
+    margin: 15px;
+    justify-content: center;
+}
+/*End of flex */
+/* Start of styling in reponse to previous assignment */
+p {
+    text-align: center;
+    padding-bottom: 20px;
+}
+dl {
+    margin-left: 15px;
+}
+dt {
+    padding-top: 15px;
+    font-weight: bold;
+}
+dd {
+    text-indent: 10px;
+}
+/* End of styling in reponse to previous assignment */
+
+/* Fixing the skip */
+a.skip{
+    background: white;
+    padding: 6px;
+    -webkit-transition: top 1s ease-out;
+    transition: left 1s ease-out;
+    z-index: 1;
+    /* Requirement 3 code here*/
+    position: absolute;
+    left: -500px;
+  }
+a.skip:focus {
+left: 0px;
+top: 20px;
+}
