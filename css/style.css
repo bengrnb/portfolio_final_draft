@@ -1,5 +1,11 @@
 body {
     background-image: url("../images/background.jpg");
+    /* adding the parallex here */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* end of parallex code */
 }
 * {
     font-family: 'Roboto', sans-serif;
@@ -33,7 +39,7 @@ img:hover {
     border: 5px solid #ea4335;
 }
 P {
-    margin: 10px;
+    margin: 20px;
 }
 footer {
     margin: 10px;
@@ -139,6 +145,9 @@ img#rotating {
     img#rotating {
         animation: none;
     }
+    body {
+        background-attachment: initial;
+    }
 }
 /* End of animation */
 
@@ -150,7 +159,7 @@ nav li {
     background-color: #4285F4;
     text-align: center;
 }
-ul #grid {
+#grid {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -167,43 +176,100 @@ ul #grid {
 #watch_movements {
     grid-area: 4 / 1 / span 1 / span 1;
 }
+@media screen and (min-width: 766px) {
+    /* tablet view */
+    #grid{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    #watch_components {
+        grid-area: 1 / 1 / span 1 / span 1;
+    }
+    #watch_brands {
+        grid-area: 1 / 2 / span 1 / span 1;
+    }
+    #watch_features {
+        grid-area: 2 / 1 / span 1 / span 1;
+    }
+    #watch_movements {
+        grid-area: 2 / 2 / span 1 / span 1;
+    }
+}
+@media screen and (min-width: 1700px) {
+    /* desktop view */
+    #grid{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    #watch_components {
+        grid-area: 1 / 1 / span 1 / span 1;
+    }
+    #watch_brands {
+        grid-area: 1 / 2 / span 1 / span 1;
+    }
+    #watch_features {
+        grid-area: 1 / 3 / span 1 / span 1;
+    }
+    #watch_movements {
+        grid-area: 1 / 4 / span 1 / span 1;
+    }
+}
 /* End of Nav/Grid element */
 
 /* Beginning of flex */
-.watch_components_images {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    border: red 2px solid;
-    margin: 15px;
-    justify-content: center;
+
+.watch_components_images, .watch_movement_images, .watch_features_images {
+display: flex;
+align-items: center;
+border: red 2px solid;
+margin: 15px;
+justify-content: center;
+flex-direction: column;
 }
+@media screen and (min-width: 766px) {
+    /* tablet view */
+    .watch_components_images, .watch_movement_images, .watch_features_images {
+    flex-wrap: wrap;
+    flex-direction: row;
+    }
+}
+@media screen and (min-width: 1700px) {
+    /* desktop view */
+    .watch_components_images, .watch_movement_images, .watch_features_images {
+    justify-content: space-evenly;
+    column-gap: 70px;
+    }
+}
+
+/* end of code for new mobile requirement of flex */
+/* end of flex for watch movements page */
+
+/* Start of grid for new mobile requirements */
+
 .watch_brands_images {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    border: blue 2px solid;
-    margin: 15px;
-    justify-content: center;
-}
-.watch_features_images {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto;
     border: red 2px solid;
     margin: 15px;
-    justify-content: center;
-}
-.watch_movement_images {
-    display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    border: red 2px dotted;
-    margin: 15px;
-    justify-content: center;
+    justify-items: center;
 }
-/*End of flex */
+@media screen and (min-width: 766px) {
+    /* tablet view */
+    .watch_brands_images {
+    /* grid-template-columns: minmax(0, .9fr) minmax(0, .9fr) minmax(0, .9fr); */
+    grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (min-width: 1700px) {
+    /* desktop view */
+    .watch_brands_images {
+    grid-template-columns: auto auto auto auto;
+    padding: 20px;
+    }
+}
+/* end of grid for new mobile requirment */
+
 /* Start of styling in reponse to previous assignment */
 p {
     text-align: center;
@@ -211,6 +277,7 @@ p {
 }
 dl {
     margin-left: 15px;
+    display: inline-block;
 }
 dt {
     padding-top: 15px;
@@ -235,4 +302,68 @@ a.skip{
 a.skip:focus {
 left: 0px;
 top: 20px;
+}
+/* start of flip card code */
+.flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 200px;
+  }
+
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  /* Do an horizontal flip when you tab to the flip box container */
+  .focus-me:focus .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: rgb(255, 255, 255);
+    color: black;
+  }
+
+  /* Style the back side */
+  .flip-card-back {
+    background-color: blue;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .flip-card-back h1 {
+      color: white;
+  }
+  /* removing the flip animaiton for prefers reduced motion */
+  @media screen and (prefers-reduced-motion: reduce){
+      .flip-card:hover .flip-card-inner {
+        transform: none;
+      }
+       .focus-me:focus .flip-card-inner {
+        transform: none;
+      }
+}
+/* end of the flip card */
+
+.references {
+    display: inline-block;
 }
