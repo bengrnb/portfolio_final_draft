@@ -367,3 +367,23 @@ top: 20px;
 .references {
     display: inline-block;
 }
+
+/* adjusting the styling with screen size */
+/* paragraph stying used above. Brought down here and commented out for reference */
+/* p {
+    text-align: center;
+    padding-bottom: 20px;
+} */
+@media screen and (min-width: 766px) {
+    /* tablet view */
+    p {
+        text-align: left;
+        padding-left: 30px;
+    }
+}
+@media screen and (min-width: 1700px) {
+    /* desktop view */
+    p {
+        padding-left: 40px;
+    }
+}
